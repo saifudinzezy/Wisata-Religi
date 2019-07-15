@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/text_margin"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/identityText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/nama_wisata"
+        android:inputType="textCapWords"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/desk"
+        android:inputType="textCapWords"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/alamat"
+        android:inputType="textCapCharacters"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/latitude"
+        android:inputType="textCapCharacters"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/longitude"
+        android:inputType="textCapCharacters"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/border_yellow_button"
+        android:hint="@string/foto"
+        android:inputType="textCapCharacters"
+        android:padding="@dimen/appbar_padding_top" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/bg_button"
+        android:text="@string/simpan"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
