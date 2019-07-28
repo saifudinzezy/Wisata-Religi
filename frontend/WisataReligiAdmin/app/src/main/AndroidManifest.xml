@@ -12,9 +12,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -35,7 +35,9 @@
             android:name=".menu.detail.DetailWisata"
             android:label="@string/title_activity_detail_wisata"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".menu.main.menu.Tentang" />
+        <activity
+            android:name=".menu.main.menu.Tentang"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".menu.main.menu.Acara" />
         <activity android:name=".menu.main.menu.Petilasan" />
         <activity

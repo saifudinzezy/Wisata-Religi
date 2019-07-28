@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wisata Religi</string>
+    <string name="app_name">Wisata Religi Admin</string>
     <string name="wisata">Wisata Religi</string>
     <string name="desc_wisata">Info Wisata Religi</string>
     <string name="event">Acara</string>

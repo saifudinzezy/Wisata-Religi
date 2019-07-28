@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,8 +57,8 @@ public class DetailWisata extends AppCompatActivity {
     AppBarLayout appBar;
     @BindView(R.id.galeri)
     RecyclerView galeri;
-    @BindView(R.id.desk)
-    TextView desk;
+    @BindView(R.id.txt_desk)
+    WebView desk;
     @BindView(R.id.lokasi)
     FloatingActionButton lokasi;
     WisataItem data;
@@ -80,7 +81,9 @@ public class DetailWisata extends AppCompatActivity {
         data = getIntent().getParcelableExtra(DATA);
         if (data != null) {
             try {
-                desk.setText(data.getDesk());
+                desk.getSettings().setJavaScriptEnabled(true);
+                desk.loadData(data.getDesk(), "text/html; charset=utf-8", "UTF-8");
+
                 Glide.with(this)
                         .load(BASE_URL_IMAGE + data.getFoto())
                         .into(img);

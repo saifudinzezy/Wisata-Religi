@@ -29,10 +29,10 @@ if ($cek > 0) {
         $data["id_wisata"] = $row["id_wisata"];
         $data["nama"] = $row["nama"];
         $data["alamat"] = $row["alamat"];
-        $data["desk"] = $row["desk"];
+        $data["desk"] = utf8_encode($row["desk"]);;
         $data["latitude"] = $row["latitude"];
         $data["longitude"] = $row["longitude"];
-        $data["foto"] = $row["foto"];
+        $data["foto"] = utf8_encode($row["foto"]);
 
         //galeri
         $cari = $row["id_wisata"];
