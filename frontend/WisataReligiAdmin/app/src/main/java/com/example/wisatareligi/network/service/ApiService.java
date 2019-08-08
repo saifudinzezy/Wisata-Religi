@@ -18,47 +18,47 @@ import retrofit2.http.Part;
 public interface ApiService {
     //TODO read
     //wisata
-    @GET("read/wisata.php")
+    @GET("/read/wisata.php")
     Call<ResponseWisata> getWisata();
 
     @FormUrlEncoded
-    @POST("read/wisata.php")
+    @POST("/read/wisata.php")
     Call<ResponseWisata> getWisataId(@Field("id") String id);
 
     //galeri
-    @GET("read/galeri.php")
+    @GET("/read/galeri.php")
     Call<ResponseGaleri> getGaleri();
 
     @FormUrlEncoded
-    @POST("read/galeri.php")
+    @POST("/read/galeri.php")
     Call<ResponseGaleri> getGaleriId(@Field("id") String id);
 
     //acara
-    @GET("read/acara.php")
+    @GET("/read/acara.php")
     Call<ResponseAcara> getAcara();
 
     @FormUrlEncoded
-    @POST("read/acara.php")
+    @POST("/read/acara.php")
     Call<ResponseAcara> getAcaraId(@Field("id") String id);
 
     //login
     @FormUrlEncoded
-    @POST("read/admin.php")
+    @POST("/read/admin.php")
     Call<ResponseLogin> login(@Field("email") String email, @Field("pass") String pass);
 
     //TODO delete
     @FormUrlEncoded
-    @POST("delete/delete.php")
+    @POST("/delete/delete.php")
     Call<ResponseInsert> delete(@Field("tabel") String tabel, @Field("cari") String cari, @Field("id_data") String idData);
 
     //TODO create data
     @FormUrlEncoded
-    @POST("create/acara.php")
+    @POST("/create/acara.php")
     Call<ResponseInsert> insertAcara(@Field("id") String id, @Field("nama") String nama, @Field("desk") String desk, @Field("pembicara") String pembicara,
                                      @Field("alamat") String alamat, @Field("duror") String duror, @Field("tanggal") String tanggal, @Field("waktu") String waktu);
 
     @Multipart
-    @POST("create/wisata.php")
+    @POST("/create/wisata.php")
     Call<ResponseInsert> insertWisata(@Part("nama") String nama,
                                       @Part("alamat") String alamat,
                                       @Part("desk") String desk,
@@ -67,7 +67,7 @@ public interface ApiService {
                                       @Part MultipartBody.Part image);
 
     @Multipart
-    @POST("create/galeri.php")
+    @POST("/create/galeri.php")
     Call<ResponseInsert> insertGaleri(@Part("id") String nama,
                                       @Part("desk") String desk,
                                       @Part MultipartBody.Part image);
@@ -75,13 +75,13 @@ public interface ApiService {
     //TODO update data
     //acara
     @FormUrlEncoded
-    @POST("update/acara.php")
+    @POST("/update/acara.php")
     Call<ResponseInsert> updateAcara(@Field("id") String id, @Field("nama") String nama, @Field("desk") String desk, @Field("pembicara") String pembicara,
                                      @Field("alamat") String alamat, @Field("duror") String duror, @Field("tanggal") String tanggal, @Field("waktu") String waktu);
 
     //wisata
     @Multipart
-    @POST("update/wisata.php")
+    @POST("/update/wisata.php")
     Call<ResponseInsert> updateWisata1(@Part("id_wisata") int id,
                                        @Part MultipartBody.Part image,
                                        @Part("nama") String nama,
@@ -92,7 +92,7 @@ public interface ApiService {
                                        @Part("long") String longitude);
 
     @FormUrlEncoded
-    @POST("update/wisata.php")
+    @POST("/update/wisata.php")
     Call<ResponseInsert> updateWisata2(@Field("nama") String nama,
                                        @Field("id_wisata") String id,
                                        @Field("alamat") String alamat,
@@ -102,20 +102,20 @@ public interface ApiService {
 
     //galeri
     @Multipart
-    @POST("update/galeri.php")
+    @POST("/update/galeri.php")
     Call<ResponseInsert> updateGaleri1(@Part("id") int id,
                                        @Part MultipartBody.Part image,
                                        @Part("hapus") String hapus,
                                        @Part("desk") String desk);
 
     @FormUrlEncoded
-    @POST("update/galeri.php")
+    @POST("/update/galeri.php")
     Call<ResponseInsert> updateGaleri2(@Field("id") String id,
                                        @Field("desk") String desk);
 
     //pass
     @FormUrlEncoded
-    @POST("update/admin.php")
+    @POST("/update/admin.php")
     Call<ResponseInsert> updatePass(@Field("id") String id,
                                        @Field("pass") String pass);
 }

@@ -29,4 +29,6 @@
     <color name="hint_label">#4E4E4E</color>
     <color name="grey">#5b5b5b</color>
     <color name="lbl_secondary">#8d8d8d</color>
+    <color name="profile_default_tint">#e0e0e0</color>
+    <color name="white">#FFFFFF</color>
 </resources>

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.wisatareligi.R;
 import com.example.wisatareligi.adapter.GaleriAdapter;
+import com.example.wisatareligi.menu.Komentar;
 import com.example.wisatareligi.model.galeri.GaleriItem;
 import com.example.wisatareligi.model.galeri.ResponseGaleri;
 import com.example.wisatareligi.model.wisata.WisataItem;
@@ -66,6 +67,8 @@ public class DetailWisata extends AppCompatActivity {
     AVLoadingIndicatorView loader;
     @BindView(R.id.no_image)
     TextView noImage;
+    @BindView(R.id.komentar)
+    FloatingActionButton komentar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,22 +97,6 @@ public class DetailWisata extends AppCompatActivity {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
-        }
-    }
-
-    @OnClick(R.id.lokasi)
-    public void onViewClicked() {
-        try {
-            if (data != null) {
-                //maps
-                Uri gmmIntentUri = Uri.parse("google.navigation:q=" + data.getLatitude() + "," + data.getLongitude() + "");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                startActivity(mapIntent);
-            }
-        } catch (Exception e) {
-            Snackbar.make(img, "Tidak ada aplikasi google maps, silahkan download dulu", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
         }
     }
 
@@ -169,5 +156,30 @@ public class DetailWisata extends AppCompatActivity {
                 Toast.makeText(DetailWisata.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @OnClick({R.id.lokasi, R.id.komentar})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.lokasi:
+                try {
+                    if (data != null) {
+                        //maps
+                        Uri gmmIntentUri = Uri.parse("google.navigation:q=" + data.getLatitude() + "," + data.getLongitude() + "");
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        startActivity(mapIntent);
+                    }
+                } catch (Exception e) {
+                    Snackbar.make(img, "Tidak ada aplikasi google maps, silahkan download dulu", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                break;
+            case R.id.komentar:
+                Intent intent = new Intent(DetailWisata.this, Komentar.class);
+                intent.putExtra(DATA, data);
+                startActivity(intent);
+                break;
+        }
     }
 }

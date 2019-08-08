@@ -99,4 +99,27 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="lbl_create_account">DINPORAPAR Pekalongan \n Copy Right @ 2019</string>
+    <string name="nama">Nama</string>
+    <string name="alamat">Alamat</string>
+    <string name="signup">Daftar</string>
+    <string name="tmp">Tempat Lahir</string>
+    <string name="keluar">Kembali</string>
+
+    <!--gallery-->
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <string name="msg_error_unable_select_profile_pic">Unable to set profile image. Please try again!</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="dialog_permission_title">Grant Permissions</string>
+    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="go_to_settings">GOTO SETTINGS</string>
+    <string name="pass">Password</string>
+    <string name="hint_id">Nama</string>
+    <string name="hint_password">Password</string>
+    <string name="login">Login</string>
+    <string name="daftar">Daftar</string>
+    <string name="insert_your_message">Tulis Komentar...</string>
+    <string name="send">Kirim</string>
 </resources>

@@ -15,10 +15,12 @@ import com.example.wisatareligi.R;
 import com.example.wisatareligi.menu.Acara;
 import com.example.wisatareligi.menu.Petilasan;
 import com.example.wisatareligi.menu.Tentang;
+import com.example.wisatareligi.menu.loginregist.Login;
 import com.example.wisatareligi.model.wisata.ResponseWisata;
 import com.example.wisatareligi.model.wisata.WisataItem;
 import com.example.wisatareligi.network.ApiService;
 import com.example.wisatareligi.network.RetroClient;
+import com.example.wisatareligi.session.Session;
 import com.glide.slider.library.Animations.DescriptionAnimation;
 import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.SliderTypes.BaseSliderView;
@@ -50,12 +52,24 @@ public class MainActivity extends AppCompatActivity implements ViewPagerEx.OnPag
     CardView tentang;
     @BindView(R.id.ll)
     LinearLayout ll;
+    Session session;
+    @BindView(R.id.exit)
+    CardView exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        session = new Session(this);
+
+        if (!session.getSPSudahLogin2()) {
+            Toast.makeText(this, "Anda harus login!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, Login.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
 
         //slider
         slider.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
@@ -68,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements ViewPagerEx.OnPag
         getWisata();
     }
 
-    @OnClick({R.id.petilasan, R.id.event, R.id.tentang})
+    @OnClick({R.id.petilasan, R.id.event, R.id.tentang, R.id.exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.petilasan:
@@ -79,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements ViewPagerEx.OnPag
                 break;
             case R.id.tentang:
                 startActivity(new Intent(MainActivity.this, Tentang.class));
+                break;
+            case R.id.exit:
+                startActivity(new Intent(MainActivity.this, Profil.class));
                 break;
         }
     }

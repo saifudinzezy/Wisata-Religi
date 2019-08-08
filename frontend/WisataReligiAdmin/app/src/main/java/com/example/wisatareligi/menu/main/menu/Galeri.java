@@ -62,7 +62,7 @@ public class Galeri extends AppCompatActivity implements SearchView.OnQueryTextL
         setContentView(R.layout.activity_galeri);
         ButterKnife.bind(this);
 
-        getSupportActionBar().setTitle("Acara");
+        getSupportActionBar().setTitle("Galeri");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         rv.setLayoutManager(new GridLayoutManager(Galeri.this, 2));
@@ -167,7 +167,7 @@ public class Galeri extends AppCompatActivity implements SearchView.OnQueryTextL
             @Override
             public void onResponse(Call<ResponseWisata> call, Response<ResponseWisata> response) {
                 hasilPesanSpiner = new ArrayList<>();
-                hasilPesanSpiner.add(new WisataItem("0", "-Semua Acara-"));
+                hasilPesanSpiner.add(new WisataItem("0", "-Semua Wisata-"));
                 hasilPesanSpiner.addAll(response.body().getWisata());
 
                 if (response.body().getResponse().equalsIgnoreCase(SUCCESS)) {
@@ -204,7 +204,6 @@ public class Galeri extends AppCompatActivity implements SearchView.OnQueryTextL
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         adapter.hapusData(data.getIdGaleri(), "galeri", "id_galeri");
-                        getWisata();
                     }
                 })
                 .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -220,6 +219,11 @@ public class Galeri extends AppCompatActivity implements SearchView.OnQueryTextL
     @Override
     public void onDelete(GaleriItem data) {
         delete(data);
+    }
+
+    @Override
+    public void onRefresh() {
+        getWisata();
     }
 
     private void getAcara(String cek) {

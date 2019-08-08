@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
-        android:text="Aplikasi ini dibuat untuk mengedokasi para peziarah dan mempermudah peziarah ketika ingin melihat jdwal pengajian, khoul dan info rute menuju lokasi"
+        android:text="Aplikasi ini dibuat untuk mengedokasi para peziarah dan mempermudah peziarah ketika ingin melihat jadwal pengajian, khoul dan info rute menuju lokasi"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="20sp" />

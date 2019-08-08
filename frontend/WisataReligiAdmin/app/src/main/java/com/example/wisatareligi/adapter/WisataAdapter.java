@@ -129,6 +129,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.ViewHolder
 
     public interface OnFunction {
         void onDelete(WisataItem data);
+        void onRefresh();
     }
 
     public void hapusData(final String id, final String tabel, final String cari) {
@@ -140,6 +141,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.ViewHolder
                 try {
                     if (response.body().getCode() == 200) {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        listener.onRefresh();
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }

@@ -23,7 +23,9 @@
         <activity android:name=".menu.add.AddGaleri" />
         <activity android:name=".menu.add.AddAcara" />
         <activity android:name=".menu.main.menu.Galeri" />
-        <activity android:name=".menu.login.LoginActivity">
+        <activity
+            android:name=".menu.login.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

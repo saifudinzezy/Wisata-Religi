@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/logo_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/text_margin"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="@dimen/toolbar_profile_width"
+            android:layout_height="wrap_content">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/img_profile"
+                android:layout_width="@dimen/toolbar_profile_width"
+                android:layout_height="@dimen/toolbar_profile_width"
+                android:layout_marginTop="@dimen/activity_padding"
+                android:layout_marginBottom="@dimen/activity_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_people"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="2dp" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/img_plus"
+                android:layout_width="@dimen/ic_plus_width"
+                android:layout_height="@dimen/ic_plus_width"
+                android:layout_alignBottom="@id/img_profile"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_add_black_24dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="1" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_container"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_email"
+            style="@style/TextLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_layout_form"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                android:background="@null"
+                android:hint="@string/nama"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/activity_margin_half"
+                android:paddingRight="@dimen/activity_margin_half"
+                android:textCursorDrawable="@null" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_half"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_layout_form"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/input_tmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_margin_half"
+                    android:background="@null"
+                    android:hint="@string/tmp"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/activity_margin_half"
+                    android:paddingRight="@dimen/activity_margin_half"
+                    android:textCursorDrawable="@null" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_tgl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_margin_half"
+                android:background="@drawable/bg_input_layout_form"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir" />
+
+                <EditText
+                    android:id="@+id/input_tgl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_margin_half"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:hint="08/08/2019"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/activity_margin_half"
+                    android:paddingRight="@dimen/activity_margin_half"
+                    android:textCursorDrawable="@null" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/bg_input_layout_form"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+            <EditText
+                android:id="@+id/input_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                android:background="@null"
+                android:hint="@string/alamat"
+                android:inputType="textCapWords"
+                android:paddingLeft="@dimen/activity_margin_half"
+                android:paddingRight="@dimen/activity_margin_half"
+                android:textCursorDrawable="@null" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/bg_input_layout_form"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+            <EditText
+                android:id="@+id/input_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                android:background="@null"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/activity_margin_half"
+                android:paddingRight="@dimen/activity_margin_half"
+                android:textCursorDrawable="@null" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_marginRight="@dimen/activity_margin_half"
+                android:layout_weight="1"
+                android:background="@android:color/black"
+                android:text="@string/signup"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_keluar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_margin_half"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_weight="1"
+                android:background="@android:color/black"
+                android:text="@string/keluar"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:visibility="invisible"
+            app:indicatorColor="@android:color/black"
+            app:indicatorName="BallPulseIndicator" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_30"
+        android:background="@null"
+        android:text="@string/lbl_create_account"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

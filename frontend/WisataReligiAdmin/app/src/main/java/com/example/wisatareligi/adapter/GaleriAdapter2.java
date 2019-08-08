@@ -127,6 +127,7 @@ public class GaleriAdapter2 extends RecyclerView.Adapter<GaleriAdapter2.ViewHold
 
     public interface OnFunction {
         void onDelete(GaleriItem data);
+        void onRefresh();
     }
 
     public void hapusData(final String id, final String tabel, final String cari) {
@@ -138,6 +139,7 @@ public class GaleriAdapter2 extends RecyclerView.Adapter<GaleriAdapter2.ViewHold
                 try {
                     if (response.body().getCode() == 200) {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        listener.onRefresh();
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }

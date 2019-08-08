@@ -96,7 +96,6 @@ public class AddWisata extends AppCompatActivity {
         getSupportActionBar().setTitle("Tambah Data");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         data = getIntent().getParcelableExtra(DATA);
         if (data != null) {
             try {

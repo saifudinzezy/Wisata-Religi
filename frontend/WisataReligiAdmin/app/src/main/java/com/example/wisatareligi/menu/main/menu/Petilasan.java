@@ -152,6 +152,11 @@ public class Petilasan extends AppCompatActivity implements SearchView.OnQueryTe
         delete(data);
     }
 
+    @Override
+    public void onRefresh() {
+        getWisata();
+    }
+
     private void delete(final WisataItem data) {
         //buat object alarm
         AlertDialog.Builder aleBuilder = new AlertDialog.Builder(Petilasan.this);
@@ -164,7 +169,6 @@ public class Petilasan extends AppCompatActivity implements SearchView.OnQueryTe
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         adapter.hapusData(data.getIdWisata(), "wisata", "id_wisata");
-                        getWisata();
                     }
                 })
                 .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
